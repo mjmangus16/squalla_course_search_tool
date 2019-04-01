@@ -46,7 +46,7 @@ const NearMe = ({ classes, submitHandler }) => {
         fullWidth
         onClick={handleNearMe}
       >
-        Find Courses Near Me
+        Courses Near Me
       </Button>
     </div>
   );
