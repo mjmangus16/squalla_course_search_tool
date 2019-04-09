@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { withStyles } from "@material-ui/core";
+import {
+  Grid,
+  Card,
+  CardContent,
+  withStyles,
+  Typography
+} from "@material-ui/core";
 import axios from "axios";
 
 import Header from "./Components/Layout/Header";
@@ -79,6 +85,33 @@ class App extends Component {
       zipCode,
       courses
     } = this.state;
+
+    let coursesContent;
+
+    if (!courses) {
+      coursesContent = (
+        <Grid
+          container
+          justify="center"
+          spacing={8}
+          style={{ width: "100%", margin: "auto" }}
+        >
+          <Grid item sm={6} xs={12}>
+            <Card className={classes.card}>
+              <CardContent>
+                <Typography variant="subheading">
+                  We could not find any courses that matched that criteria.
+                  Please try again.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      );
+    } else {
+      coursesContent = <Courses courses={courses} />;
+    }
+
     return (
       <div className="App">
         <CssBaseline />
@@ -95,7 +128,7 @@ class App extends Component {
             submitHandler={this.getCourses}
             handleNearMe={this.handleNearMe}
           />
-          <Courses courses={courses} />
+          {coursesContent}
         </div>
       </div>
     );
