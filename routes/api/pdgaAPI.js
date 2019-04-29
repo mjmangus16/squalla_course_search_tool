@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const request = require("request");
 
+const pdgaApiUsername = require("./../../config/pdgaApi_dev").pdgaApiUsername;
+const pdgaApiPassword = require("./../../config/pdgaApi_dev").pdgaApiPassword;
+
 // @route   POST api/pdgaAPI/search
 // @desc    GET Courses by name
 // @access  Private
@@ -15,8 +18,8 @@ router.post("/search", (req, res) => {
       method: "POST",
       json: true,
       body: {
-        username: "Michael Mangus 118455",
-        password: "Stump1616"
+        username: pdgaApiUsername,
+        password: pdgaApiPassword
       }
     },
     (error, response, body) => {
