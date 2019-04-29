@@ -4,10 +4,14 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core";
+import { amber } from "@material-ui/core/colors";
 // import { green, blue, red } from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
   palette: {
+    primary: {
+      main: amber[500]
+    },
     type: "dark"
   }
 });
