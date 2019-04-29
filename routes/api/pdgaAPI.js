@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const request = require("request");
 
-const pdgaApiUsername = require("./../../config/pdgaApi_dev").pdgaApiUsername;
-const pdgaApiPassword = require("./../../config/pdgaApi_dev").pdgaApiPassword;
+const pdgaApiUsername = require("./../../config/pdgaApi").pdgaApiUsername;
+const pdgaApiPassword = require("./../../config/pdgaApi").pdgaApiPassword;
 
 // @route   POST api/pdgaAPI/search
 // @desc    GET Courses by name
