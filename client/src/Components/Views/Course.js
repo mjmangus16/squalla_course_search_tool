@@ -46,7 +46,7 @@ const styles = theme => ({
   }
 });
 
-const Course = ({ classes, data, addCourseHandler }) => {
+const Course = ({ classes, data }) => {
   const getDistance = (distances, holes) => {
     let distance;
 

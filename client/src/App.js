@@ -18,7 +18,7 @@ import Courses from "./Components/Views/Courses";
 const styles = theme => ({
   container: {
     marginTop: 64,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       marginTop: 56
     }
   }
